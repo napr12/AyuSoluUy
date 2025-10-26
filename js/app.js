@@ -1,12 +1,38 @@
-const SERVICIOS = ['Jardinería', 'Limpieza', 'Plomería', 'Electricidad', 'Cuidado de mascotas'];
-const PROVEEDORES = ['Juan Pérez', 'María Gómez', 'Carlos Rodríguez'];
-const CLIENTES = ['Ana López', 'Luis Fernández'];
+const DEPARTAMENTOS = ['Montevideo', 'Maldonado', 'Rocha', 'Treinta y Tres', 'Cerro Largo', 'Rivera', 'Artigas', 'Paysandu', 'Salto', 'Tacuarembo', 'Durazano', 'Río Negro', 'Soriano', 'Colonia', 'Flores', 'Florida', 'Colonia', 'San Jose', 'Canelones']
 
+let users
+let login
+const listarProveedor = (proveedor) => {
+    let cards = document.getElementsByClassName('cards')[0];
+    cards.innerHTML= cards.innerHTML+`
+    <div class="card" style="width: 18rem;">
+         <img src="./img/${proveedor.img}" class="card-img-top">
+         <div class="card-body">
+             <h5 class="card-title">${proveedor.nombreCompleto()}</h5>
+             <p class="card-text"> <b>Servicio:</b> ${proveedor.servicio} <br> <b>Descripción:</b> ${proveedor.descripcion}</p>
+             ${login?'<a href="#" class="btn btn-primary">Contactar</a>':''}
+         </div>
+     </div>
+    `
+    console.log(`Cargo a ${proveedor.userName}`)
 
-const nombreUser = prompt("Hola, bienvenido a AyuSoluUy, ¿Cuál es tu nombre?");
-let tipoUsuario;
+}
+const cargarProveedores = (listUsers) => {
+    
+    // let user = listUsers[1]
+    // listarProveedor( new Proveedor(userName=user.userName,pwd=user.pwd,nombre=user.nombre,apellido=user.apellido,domicilio=user.domicilio,fechaNacimiento=user.fechaNacimiento,genero=user.genero,email=user.email,img=user.img,servicio=user.servicio,precioHora=user.precioHora,descripcion=user.descripcion))
+    
+    listUsers.forEach((user) => {
+        
+        
+        if (Object.keys(new Proveedor).every(prop=>user.hasOwnProperty(prop))) {
+         listarProveedor(new Proveedor(userName=user.userName,pwd=user.pwd,nombre=user.nombre,apellido=user.apellido,domicilio=user.domicilio,fechaNacimiento=user.fechaNacimiento,genero=user.genero,email=user.email,img=user.img,servicio=user.servicio,precioHora=user.precioHora,descripcion=user.descripcion))
+        }
+    }
 
+    )
 
+}
 
 const mainProveedor = () => {
     let count = 0;
@@ -19,7 +45,7 @@ const iniciarSesionProveedor = () => {
 }
 
 const mainCliente = () => {
-    menu(`Iniciar sesión`,`Registrarme`,2)
+    menu(`Iniciar sesión`, `Registrarme`, 2)
     listarServicios()
     listarProveedores()
 }
@@ -33,51 +59,35 @@ const agregarServicio = () => null
 const contratarServicio = () => null
 const listarServicios = () => {
     let text = "Servicios disponibles:\n"
-    SERVICIOS.forEach((servicio, index) => text=text+`${index + 1}- ${servicio}\n`)
-    alert(text) 
+    SERVICIOS.forEach((servicio, index) => text = text + `${index + 1}- ${servicio}\n`)
+    alert(text)
 }
 const listarClientes = () => null
-const listarProveedores = () =>{
+const listarProveedores = () => {
     let text = "Proveedores disponibles:\n"
-    PROVEEDORES.forEach((proveedor, index) => text=text+`${index + 1}- ${proveedor}\n`)
-    alert(text) 
+    PROVEEDORES.forEach((proveedor, index) => text = text + `${index + 1}- ${proveedor}\n`)
+    alert(text)
 }
 
 const iniciarSesionCliente = () => null
 const cerrarSesion = () => null
 
-const menu = (txtOpcion1, txtOpcion2, number1) => {
-    let count = 0;
-    let opcion = 0;
-    
-    do {
-        if (count > 0 && count < 3) {
-            alert("Por favor, ingrese una opción válida");
-        } else if (count == 3) {
-            alert("Parece que estás teniendo problemas para ingresar una opción válida. Por favor, intenta nuevamente más tarde.");
-            break;
-        }
-        opcion = parseInt(prompt(`Ingresar opción: \n1- ${txtOpcion1} \n2- ${txtOpcion2}`))
-        count++;
-    } while (opcion != 1 && opcion != 2);
 
-    switch (number1+''+opcion) {
-        case '11': mainCliente(nombreUser); break;
-        case '12': mainProveedor(nombreUser); break;
-        case '21': iniciarSesionCliente(); break;
-        case '22': agregarCliente(nombreUser); break;
-        case '31': iniciarSesionProveedor(); break;
-        case '32': agregarProveedor(); break;
-        case '41': iniciarSesionProveedor(); break;
-        case '42': agregarProveedor(); break;
-        case '51': iniciarSesionProveedor(); break;
-        case '52': agregarProveedor(); break;
-        case '61': iniciarSesionProveedor(); break;
-        case '62': agregarProveedor(); break;
-        case '71': iniciarSesionProveedor(); break;
-        case '72': agregarProveedor(); break;
-        default: alert("Por favor, recarga la página e ingresa una opción válida");
-    }
+if (localStorage.getItem('users')) {
+    users = JSON.parse(localStorage.getItem('users'))
+    console.log('Se cargaron user desde el local Storage');
+} else {
+    users = []
+    users.push(new Cliente('test', '1234', 'Nahuel', 'Pedrozo', new Domicilio('Montevideo', '18 de Julio 123', 'Montevideo'), new Date(2001, 3, 16), 'H', 'test@gmail.com', 'default.png'))
+    users.push(new Proveedor('Prueba', '56789', 'Aaron', 'Pedrozo', new Domicilio('Montevideo', 'Colonia 123', 'Montevideo'), new Date(2001, 3, 16), 'H', 'test1@gmail.com', 'default.png', 'Jardinería', 150.50, 'Poda de cesped, arboles, mantenimiento de plantas y limpieza de zanjas'))
+    users.push(new Cliente('test2', '1234', 'Nahuel', 'Rojas', new Domicilio('Canelones', 'Sarandí 123', 'Las Piedras'), new Date(2001, 3, 16), 'H', 'test2@gmail.com', 'default.png'))
+    users.push(new Proveedor('Prueba2', '1234', 'Aaron', 'Rojas', new Domicilio('Montevideo', 'Uruguay 123', 'Montevideo'), new Date(2001, 3, 16), 'H', 'test3@gmail.com', 'default.png', 'Psicología', 1400, 'Terapia de niños y adolecentes'))
+    users.push(new Cliente('test3', '1234', 'Juan', 'Perez', new Domicilio('Canelones', 'Paysandu 123', 'Tala'), new Date(2001, 3, 16), 'H', 'test4@gmail.com', 'default.png'))
+    users.push(new Proveedor('Prueba3', '1234', 'Maria', 'Rodriguez', new Domicilio('Canelones', 'Salto 123', 'Montevideo'), new Date(2001, 3, 16), 'M', 'test5@gmail.com', 'default.png', 'Psicología', 1500, 'Terapia en general'))
+    users.push(new Proveedor('test4', '1234', 'Alberto', 'Martinez', new Domicilio('Montevideo', 'Rambla Costanera 123', 'Montevideo'), new Date(2001, 3, 16), 'H', 'test6@gmail.com', 'default.png', 'Albañilería', 200, 'Construcción y reforma de casas'))
+    localStorage.setItem('users', JSON.stringify(users))
+    console.log('Se cargo valores cargados a mano.');
 }
+cargarProveedores(users)
 
-menu("Soy cliente", "Soy proveedor", 1);
+//menu("Soy cliente", "Soy proveedor", 1);

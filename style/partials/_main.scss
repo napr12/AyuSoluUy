@@ -1,0 +1,10 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    .cards{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+

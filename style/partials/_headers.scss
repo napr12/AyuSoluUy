@@ -1,0 +1,15 @@
+.header{
+    &-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    &-list{
+        justify-content: end;
+    }
+}
+header{
+    position: sticky;
+    top: 0;
+}
