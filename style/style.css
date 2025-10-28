@@ -26,4 +26,8 @@ main .cards {
   gap: 1rem;
 }
 
+#formRegistrar {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -27,7 +27,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Login</a>
+                            <a class="nav-link" id='ingresar' href="#" data-bs-toggle="modal" data-bs-target="#login">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Servicio</a>
@@ -37,7 +37,6 @@
             </div>
         </nav>
     </header>
-
     <main>
         <aside>
             <div class="list-group">
@@ -51,7 +50,7 @@
             </div>
         </aside>
         <div class="cards" data-bs-smooth-scroll="true" data-bs-spy="scroll">
-        
+            <!-- Cards dinamicas -->
         </div>
 
     </main>
@@ -64,5 +63,75 @@
     <script src="./js/class.js"></script>
     <script src="./js/app.js"></script>
 </body>
+<div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formLogin">
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">User Name</label>
+                        <input type="text" class="form-control" id="userName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="button" id='registrar'class="btn btn-secondary">Registrar</button>
+                </form>
+
+                <form id="formRegistrar">
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">User Name</label>
+                        <input type="text" class="form-control" id="userName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido">
+                    </div>
+                    <div class="mb-3">
+                        <label for="departamento" class="form-label">Departamento</label>
+                        <input type="text" class="form-control" id="departamento">
+                    </div>
+                    <div class="mb-3">
+                        <label for="localidad" class="form-label">Localidad</label>
+                        <input type="text" class="form-control" id="localidad">
+                    </div>
+                    <div class="mb-3">
+                        <label for="domicilio" class="form-label">Domicilio</label>
+                        <input type="text" class="form-control" id="domicilio">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaNacimiento" class="form-label">Fecha Nacimiento</label>
+                        <input type="text" class="form-control" id="fechaNacimiento">
+                    </div>
+                    <div class="mb-3">
+                        <label for="genero" class="form-label">genero</label>
+                        <input type="text" class="form-control" id="genero">
+                    </div>
+                    <div class="mb-3">
+                        <label for="img" class="form-label">Perfil</label>
+                        <input type="text" class="form-control" id="img">
+                    </div>
+                    
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
 
 </html>

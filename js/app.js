@@ -18,20 +18,12 @@ const listarProveedor = (proveedor) => {
 
 }
 const cargarProveedores = (listUsers) => {
-    
-    // let user = listUsers[1]
-    // listarProveedor( new Proveedor(userName=user.userName,pwd=user.pwd,nombre=user.nombre,apellido=user.apellido,domicilio=user.domicilio,fechaNacimiento=user.fechaNacimiento,genero=user.genero,email=user.email,img=user.img,servicio=user.servicio,precioHora=user.precioHora,descripcion=user.descripcion))
-    
     listUsers.forEach((user) => {
-        
-        
         if (Object.keys(new Proveedor).every(prop=>user.hasOwnProperty(prop))) {
          listarProveedor(new Proveedor(userName=user.userName,pwd=user.pwd,nombre=user.nombre,apellido=user.apellido,domicilio=user.domicilio,fechaNacimiento=user.fechaNacimiento,genero=user.genero,email=user.email,img=user.img,servicio=user.servicio,precioHora=user.precioHora,descripcion=user.descripcion))
         }
     }
-
     )
-
 }
 
 const mainProveedor = () => {
@@ -90,4 +82,19 @@ if (localStorage.getItem('users')) {
 }
 cargarProveedores(users)
 
-//menu("Soy cliente", "Soy proveedor", 1);
+
+
+
+const escucharRegistrar = () => {
+    let btnRegistrar=document.getElementById('registrar');
+    btnRegistrar.addEventListener('click',()=>{
+    document.getElementById('formLogin').style.display='none';
+    document.getElementById('formRegistrar').style.display='block';
+});
+}
+document.getElementById('ingresar').addEventListener('click',()=>{
+    
+    document.getElementById('formLogin').style.display='block';
+    document.getElementById('formRegistrar').style.display='none';
+    escucharRegistrar();
+});
