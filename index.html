@@ -27,7 +27,8 @@
                             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id='ingresar' href="#" data-bs-toggle="modal" data-bs-target="#login">Login</a>
+                            <a class="nav-link" id='ingresar' href="#" data-bs-toggle="modal"
+                                data-bs-target="#login">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Servicio</a>
@@ -80,18 +81,18 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password">
                     </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                    <button type="button" id='registrar'class="btn btn-secondary">Registrar</button>
+                    <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Login</button>
+                    <button type="button" id='registrar' class="btn btn-secondary">Registrar</button>
                 </form>
 
                 <form id="formRegistrar">
                     <div class="mb-3">
-                        <label for="userName" class="form-label">User Name</label>
-                        <input type="text" class="form-control" id="userName">
+                        <label for="registrarUserName" class="form-label">User Name</label>
+                        <input type="text" class="form-control" id="registrarUserName">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password">
+                        <label for="registrarPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="registrarPassword">
                     </div>
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
@@ -103,7 +104,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="departamento" class="form-label">Departamento</label>
-                        <input type="text" class="form-control" id="departamento">
+                        <select id="departamento"class="form-select" aria-label="Default select example">
+                            <option selected>Seleccione</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="localidad" class="form-label">Localidad</label>
@@ -115,23 +118,23 @@
                     </div>
                     <div class="mb-3">
                         <label for="fechaNacimiento" class="form-label">Fecha Nacimiento</label>
-                        <input type="text" class="form-control" id="fechaNacimiento">
+                        <input type="date" class="form-control" id="fechaNacimiento">
                     </div>
                     <div class="mb-3">
-                        <label for="genero" class="form-label">genero</label>
+                        <label for="genero" class="form-label">Genero</label>
                         <input type="text" class="form-control" id="genero">
                     </div>
                     <div class="mb-3">
                         <label for="img" class="form-label">Perfil</label>
-                        <input type="text" class="form-control" id="img">
+                        <input type="file" class="form-control" id="img">
                     </div>
-                    
+                    <button type="submit" class="btn btn-primary">Registrar</button>
                 </form>
-                
+
             </div>
         </div>
     </div>
-    
+
 </div>
 
 </html>

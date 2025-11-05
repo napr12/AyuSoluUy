@@ -1,0 +1,119 @@
+[
+    {
+        "userName": "test",
+        "pwd": "1234",
+        "nombre": "Nahuel",
+        "apellido": "Pedrozo",
+        "domicilio": {
+            "departamento": "Montevideo",
+            "direccion": "18 de Julio 123",
+            "localidad": "Montevideo"
+        },
+        "fechaNacimiento": "2001-04-16T03:00:00.000Z",
+        "genero": "H",
+        "email": "test@gmail.com",
+        "img": "default.png"
+    },
+    {
+        "userName": "Prueba",
+        "pwd": "56789",
+        "nombre": "Aaron",
+        "apellido": "Pedrozo",
+        "domicilio": {
+            "departamento": "Montevideo",
+            "direccion": "Colonia 123",
+            "localidad": "Montevideo"
+        },
+        "fechaNacimiento": "2001-04-16T03:00:00.000Z",
+        "genero": "H",
+        "email": "test1@gmail.com",
+        "img": "default.png",
+        "servicio": "Jardinería",
+        "precioHora": 150.5,
+        "descripcion": "Poda de cesped, arboles, mantenimiento de plantas y limpieza de zanjas"
+    },
+    {
+        "userName": "test2",
+        "pwd": "1234",
+        "nombre": "Nahuel",
+        "apellido": "Rojas",
+        "domicilio": {
+            "departamento": "Canelones",
+            "direccion": "Sarandí 123",
+            "localidad": "Las Piedras"
+        },
+        "fechaNacimiento": "2001-04-16T03:00:00.000Z",
+        "genero": "H",
+        "email": "test2@gmail.com",
+        "img": "default.png"
+    },
+    {
+        "userName": "Prueba2",
+        "pwd": "1234",
+        "nombre": "Aaron",
+        "apellido": "Rojas",
+        "domicilio": {
+            "departamento": "Montevideo",
+            "direccion": "Uruguay 123",
+            "localidad": "Montevideo"
+        },
+        "fechaNacimiento": "2001-04-16T03:00:00.000Z",
+        "genero": "H",
+        "email": "test3@gmail.com",
+        "img": "default.png",
+        "servicio": "Psicología",
+        "precioHora": 1400,
+        "descripcion": "Terapia de niños y adolecentes"
+    },
+    {
+        "userName": "test3",
+        "pwd": "1234",
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "domicilio": {
+            "departamento": "Canelones",
+            "direccion": "Paysandu 123",
+            "localidad": "Tala"
+        },
+        "fechaNacimiento": "2001-04-16T03:00:00.000Z",
+        "genero": "H",
+        "email": "test4@gmail.com",
+        "img": "default.png"
+    },
+    {
+        "userName": "Prueba3",
+        "pwd": "1234",
+        "nombre": "Maria",
+        "apellido": "Rodriguez",
+        "domicilio": {
+            "departamento": "Canelones",
+            "direccion": "Salto 123",
+            "localidad": "Montevideo"
+        },
+        "fechaNacimiento": "2001-04-16T03:00:00.000Z",
+        "genero": "M",
+        "email": "test5@gmail.com",
+        "img": "default.png",
+        "servicio": "Psicología",
+        "precioHora": 1500,
+        "descripcion": "Terapia en general"
+    },
+    {
+        "userName": "test4",
+        "pwd": "1234",
+        "nombre": "Alberto",
+        "apellido": "Martinez",
+        "domicilio": {
+            "departamento": "Montevideo",
+            "direccion": "Rambla Costanera 123",
+            "localidad": "Montevideo"
+        },
+        "fechaNacimiento": "2001-04-16T03:00:00.000Z",
+        "genero": "H",
+        "email": "test6@gmail.com",
+        "img": "default.png",
+        "servicio": "Albañilería",
+        "precioHora": 200,
+        "descripcion": "Construcción y reforma de casas"
+    }
+]
