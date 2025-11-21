@@ -24,14 +24,14 @@ const cargarProveedores = (listUsers) => {
     )
 }
 
-const obtenerEstados = async ()=> fetch('./asset/estados.json').then(res => res.json()).then(data => listarEstados(data) )
+const obtenerEstados = async () => fetch('./asset/estados.json').then(res => res.json()).then(data => listarEstados(data))
 const listarEstados = (estados) => {
     const listDepartamento = document.querySelector('#departamento')
     listEstados = estados.forEach(pais => pais.Departamentos.forEach(estado => listDepartamento.innerHTML += `<option value="${estado}">${estado}</option>`))
-    
+
 }
-const main =()=>{
-    document.getElementsByClassName('cards')[0].innerHTML=''
+const main = () => {
+    document.getElementsByClassName('cards')[0].innerHTML = ''
     if (localStorage.getItem('users')) {
         let users = JSON.parse(localStorage.getItem('users'))
         console.log('Se cargaron user desde el local Storage');
@@ -46,31 +46,45 @@ const main =()=>{
         localStorage.setItem('users', JSON.stringify(users))
         console.log('Se cargo valores cargados a mano.');
     }
-}   
+}
 
-const escucharRegistrar = () => {
-    let btnRegistrar = document.getElementById('registrar');
-    btnRegistrar.addEventListener('click', () => {
-        document.getElementById('formLogin').style.display = 'none';
-        document.getElementById('formRegistrar').style.display = 'block';
-        obtenerEstados()
-    });
-}
-const escucharLogin= ()=>{
-    let btnLogin = document.querySelector('#formLogin')
-    console.log(btnLogin)
-    btnLogin.addEventListener('submit',(e)=>{
-        login = JSON.parse(localStorage.getItem('users')).filter(user=> user.userName== e.target.userName.value && user.pwd ==e.target.password.value)
-        main()
-        document.querySelector('.cards').focus()
+
+
+let btnRegistrar = document.getElementById('registrar');
+btnRegistrar.addEventListener('click', () => {
+    document.getElementById('formLogin').style.display = 'none';
+    document.getElementById('formRegistrar').style.display = 'block';
+    obtenerEstados()
+});
+
+let btnLogin = document.querySelector('#formLogin')
+btnLogin.addEventListener('submit', (e) => {
+    const user = JSON.parse(localStorage.getItem('users')).filter(user => user.userName == e.target.userName.value && user.pwd == e.target.password.value)[0]
+    if (user) {
+        login = true
+        Toastify({
+
+            text: "Se ingreso correctamente",
+            backgroundColor: "Green",
+            duration: 3000
+
+        }).showToast();
         e.preventDefault()
-    })
-}
+    } else {
+        Toastify({
+
+            text: "Usuario y/o contraseña incorrecto",
+            backgroundColor: "red",
+            duration: 3000
+
+        }).showToast();
+        e.preventDefault()
+    }
+    main()
+
+})
 document.getElementById('ingresar').addEventListener('click', () => {
     document.getElementById('formLogin').style.display = 'block';
     document.getElementById('formRegistrar').style.display = 'none';
-    escucharLogin();
-    escucharRegistrar();
 });
-
 main()
