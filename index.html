@@ -60,77 +60,103 @@
 
     </footer>
     <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="formLogin">
-                    <div class="mb-3">
-                        <label for="userName" class="form-label">User Name</label>
-                        <input type="text" class="form-control" id="userName">
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password">
-                    </div>
-                    <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Login</button>
-                    <button type="button" id='registrar' class="btn btn-secondary">Registrar</button>
-                </form>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formLogin">
+                        <div class="mb-3">
+                            <label for="userName" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="userName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Login</button>
+                        <button type="button" id='registrar' class="btn btn-secondary">Registrar</button>
+                    </form>
 
-                <form id="formRegistrar">
-                    <div class="mb-3">
-                        <label for="registrarUserName" class="form-label">User Name</label>
-                        <input type="text" class="form-control" id="registrarUserName">
-                    </div>
-                    <div class="mb-3">
-                        <label for="registrarPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="registrarPassword">
-                    </div>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre">
-                    </div>
-                    <div class="mb-3">
-                        <label for="apellido" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="apellido">
-                    </div>
-                    <div class="mb-3">
-                        <label for="departamento" class="form-label">Departamento</label>
-                        <select id="departamento" class="form-select" aria-label="Default select example">
-                            <option selected>Seleccione</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="localidad" class="form-label">Localidad</label>
-                        <input type="text" class="form-control" id="localidad">
-                    </div>
-                    <div class="mb-3">
-                        <label for="domicilio" class="form-label">Domicilio</label>
-                        <input type="text" class="form-control" id="domicilio">
-                    </div>
-                    <div class="mb-3">
-                        <label for="fechaNacimiento" class="form-label">Fecha Nacimiento</label>
-                        <input type="date" class="form-control" id="fechaNacimiento">
-                    </div>
-                    <div class="mb-3">
-                        <label for="genero" class="form-label">Genero</label>
-                        <input type="text" class="form-control" id="genero">
-                    </div>
-                    <div class="mb-3">
-                        <label for="img" class="form-label">Perfil</label>
-                        <input type="file" class="form-control" id="img">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Registrar</button>
-                </form>
+                    <form id="formRegistrar">
+                        <div class="mb-3">
+                            <label for="registrarUserName" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="registrarUserName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registrarPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="registrarPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellido" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="apellido">
+                        </div>
+                        <div class="mb-3">
+                            <label for="departamento" class="form-label">Departamento</label>
+                            <select id="departamento" class="form-select" aria-label="Default select example">
+                                <option selected>Seleccione</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="localidad" class="form-label">Localidad</label>
+                            <input type="text" class="form-control" id="localidad">
+                        </div>
+                        <div class="mb-3">
+                            <label for="domicilio" class="form-label">Domicilio</label>
+                            <input type="text" class="form-control" id="domicilio">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaNacimiento" class="form-label">Fecha Nacimiento</label>
+                            <input type="date" class="form-control" id="fechaNacimiento">
+                        </div>
+                        <div class="mb-3">
+                            <label for="genero" class="form-label">Genero</label>
+                            <input type="text" class="form-control" id="genero">
+                        </div>
+                        <div class="mb-3">
+                            <label for="img" class="form-label">Perfil</label>
+                            <input type="file" class="form-control" id="img">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="registrarCliente">
+                            <label class="form-check-label" for="registrarCliente">
+                               Registar cliente
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="registrarProv"
+                                checked>
+                            <label class="form-check-label" for="registrarProv">
+                                Registar proveedor
+                            </label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="servicio" class="form-label">Servicio</label>
+                            <input type="text" class="form-control" id="servicio">
+                        </div>
+                        <div class="mb-3">
+                            <label for="precioHora" class="form-label">Precio</label>
+                            <input type="text" class="form-control" id="precioHora">
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripcion del servicio</label>
+                            <textarea name="descripcion" class="form-control" id="descripcion"></textarea>
+                            <!-- <input type="text" class="form-control" id="descripcion"> -->
+                        </div>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </form>
 
+                </div>
             </div>
         </div>
-    </div>
 
-</div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

@@ -8,11 +8,12 @@ const listarProveedor = (proveedor) => {
          <div class="card-body">
              <h5 class="card-title">${proveedor.nombreCompleto()}</h5>
              <p class="card-text"> <b>Servicio:</b> ${proveedor.servicio} <br> <b>Descripción:</b> ${proveedor.descripcion}</p>
-             ${login ? '<a href="#" class="btn btn-primary">Contactar</a>' : ''}
+             ${login ? `<a href="#" data-username="${proveedor.userName}" class="btn btn-primary contacto-proveedor">Contactar</a>` : ''}
          </div>
      </div>
     `
-    console.log(`Cargo a ${proveedor.userName}`)
+
+
 
 }
 const cargarProveedores = (listUsers) => {
@@ -46,8 +47,18 @@ const main = () => {
         localStorage.setItem('users', JSON.stringify(users))
         console.log('Se cargo valores cargados a mano.');
     }
+    eventosContactarProveedor()
 }
 
+const eventosContactarProveedor = () =>{
+    const PROVEEDORES = document.getElementsByClassName('contacto-proveedor')c
+
+    Array.from(PROVEEDORES).forEach((prov)=>{
+        prov.addEventListener('click',()=>{
+            console.log(prov.dataset.username)
+        })
+    })
+}
 
 
 let btnRegistrar = document.getElementById('registrar');
